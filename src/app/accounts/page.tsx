@@ -1,7 +1,7 @@
 // pages/account.js
 import React from 'react';
 import Image from 'next/image';
-
+// test
 const AccountPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-4">

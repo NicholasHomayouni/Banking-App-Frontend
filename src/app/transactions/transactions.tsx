@@ -14,9 +14,8 @@ export default async function Transactions({ id }: Account) {
     }
   
     return (
-      <div className="p-4 bg-white rounded-md shadow-md">
-        <h2 className="text-lg font-bold mb-4">Transactions for Account {id}</h2>
-        <table className="min-w-full border border-gray-200">
+      <div className="p-4 bg-gray-200 rounded-md shadow-md">
+        <table className="min-w-full border border-gray-300">
           <thead className="bg-blue-800 text-white">
             <tr>
               <th className="py-2 px-4 text-left">Date</th>
@@ -28,7 +27,7 @@ export default async function Transactions({ id }: Account) {
           </thead>
           <tbody>
             {data.map((transaction) => (
-              <tr key={transaction.id} className="border-b border-gray-200 text-black">
+              <tr key={transaction.id} className="border-b border-gray-300 text-black">
                 <td className="py-2 px-4 text-left">{new Date(transaction.creationDate).toLocaleDateString()}</td>
                 <td className="py-2 px-4 text-left">{transaction.description}</td>
                 <td className="py-2 px-4 text-right">{transaction.debit ? `$${transaction.debit.toFixed(2)}` : '-'}</td>

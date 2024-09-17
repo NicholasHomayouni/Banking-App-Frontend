@@ -16,7 +16,7 @@ export default async function AccountsPage() {
       {/* Grid Layout for Accounts and Sidebar */}
       <div className="grid grid-cols-3 gap-6 mt-6">
         {/* Accounts Section */}
-        <section className="col-span-2 bg-white p-6 rounded-md shadow-sm">
+        <section className="col-span-2 bg-gray-200 p-6 rounded-md shadow-sm">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg text-black font-bold">Accounts</h2>
             <div className="space-x-2">
@@ -29,7 +29,7 @@ export default async function AccountsPage() {
             {account.map((account, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center border-t pt-4"
+                className="flex border-b border-gray-300 justify-between items-center pt-4"
               >
                 <Link href={`/accounts/${account.id}`} key={account.id}>
                   <span className="font-medium hover:underline">{account.name}</span>

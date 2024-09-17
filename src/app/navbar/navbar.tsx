@@ -17,7 +17,7 @@ export default function Navbar() {
             <h1 className="text-lg font-bold text-blue-900">First National Bank</h1>
           </div>
           <div className="text-right text-sm">
-            <span className="font-semibold text-gray-500">Welcome NICHOLE</span>,<br />
+            <span className="font-semibold text-gray-500">Welcome, NICHOLAS</span>,<br />
             <span className="text-gray-500">Last log in: Aug 08, 2019 04:37 PM EDT</span>
             <div className="space-x-2">
               <a href="/" className="text-blue-700 hover:underline">Profile</a>

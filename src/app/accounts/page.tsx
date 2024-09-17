@@ -32,10 +32,10 @@ export default async function AccountsPage() {
                 className="flex border-b border-gray-300 justify-between items-center pt-4"
               >
                 <Link href={`/accounts/${account.id}`} key={account.id}>
-                  <span className="font-medium hover:underline">{account.name}</span>
+                  <span className="font-medium text-blue-600 hover:underline">{account.name}</span>
+                  <div className="font-bold text-xs">{account.accountNumber}</div>
                 </Link>
-
-                <span className="font-bold text-2xl">${account.balance.toFixed(2)}</span>
+                <div className="text-center font-bold text-xl">${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</div>
                 <button className="text-blue-600 text-sm hover:underline">Recent</button>
               </div>
             ))}

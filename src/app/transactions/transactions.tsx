@@ -2,7 +2,6 @@ import { Account } from "../models/Account";
 import { Transaction } from "../models/Transaction";
 
 export default async function Transactions({ id }: Account) {
-    // Fetch transactions data from the backend
     let res = await fetch(`http://localhost:8080/api/transactions/account/${id}`, {
       next: { revalidate: 10 }, // Revalidate every 10 seconds if needed
       cache: 'no-store', // Prevents caching on the server side for real-time data
@@ -20,23 +19,22 @@ export default async function Transactions({ id }: Account) {
         <table className="min-w-full border border-gray-200">
           <thead className="bg-blue-800 text-white">
             <tr>
-              <th className="py-2 px-4">ID</th>
-              <th className="py-2 px-4">Description</th>
-              <th className="py-2 px-4">Debit</th>
-              <th className="py-2 px-4">Credit</th>
-              <th className="py-2 px-4">Balance After</th>
-              <th className="py-2 px-4">Created At</th>
+              <th className="py-2 px-4 text-left">Date</th>
+              <th className="py-2 px-4 text-left">Description</th>
+              <th className="py-2 px-4 text-right">Debit</th>
+              <th className="py-2 px-4 text-right">Credit</th>
+              <th className="py-2 px-4 text-right">Balance After</th>
             </tr>
           </thead>
           <tbody>
             {data.map((transaction) => (
               <tr key={transaction.id} className="border-b border-gray-200 text-black">
-                <td className="py-2 px-4">{transaction.id}</td>
-                <td className="py-2 px-4">{transaction.description}</td>
-                <td className="py-2 px-4">{transaction.debit ? `$${transaction.debit.toFixed(2)}` : '-'}</td>
-                <td className="py-2 px-4">{transaction.credit ? `$${transaction.credit.toFixed(2)}` : '-'}</td>
-                <td className="py-2 px-4">${transaction.balanceAfter.toFixed(2)}</td>
-                <td className="py-2 px-4">{new Date(transaction.creationDate).toLocaleDateString()}</td>
+                <td className="py-2 px-4 text-left">{new Date(transaction.creationDate).toLocaleDateString()}</td>
+                <td className="py-2 px-4 text-left">{transaction.description}</td>
+                <td className="py-2 px-4 text-right">{transaction.debit ? `$${transaction.debit.toFixed(2)}` : '-'}</td>
+                <td className="py-2 px-4 text-right">{transaction.credit ? `$${transaction.credit.toFixed(2)}` : '-'}</td>
+                <td className="py-2 px-4 text-right">${transaction.balanceAfter.toFixed(2)}</td>
+                
               </tr>
             ))}
           </tbody>

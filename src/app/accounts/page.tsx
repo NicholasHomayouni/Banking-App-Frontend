@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Navbar from '../navbar/navbar';
 import { Account } from '../models/Account';
 import Link from 'next/link';
-
+// Home Page technically
 export default async function AccountsPage() {
   let data = await fetch('http://localhost:8080/api/accounts/all', { cache: "no-store" });
   let response = await data.json();

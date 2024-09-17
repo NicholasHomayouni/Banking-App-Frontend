@@ -32,9 +32,9 @@ export default function Navbar() {
           <div className="space-x-4">
             <a href="/" className="hover:underline">Home</a>
             <a href="/accounts" className="hover:underline">Accounts</a>
-            <a href="/" className="hover:underline">Payments & Transfers</a>
+            <a href="#" className="hover:underline">Payments & Transfers</a>
             <a href="#" className="hover:underline">Checks & Deposits</a>
-            <a href="/" className="hover:underline">Administration</a>
+            <a href="#" className="hover:underline">Administration</a>
           </div>
         </nav>
       </header>
